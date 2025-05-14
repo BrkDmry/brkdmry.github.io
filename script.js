@@ -102,7 +102,7 @@ function startAutoSlide() {
     // Yeni interval'ı başlat
     slideInterval = setInterval(() => {
         showSlide(currentSlideIndex + 1); // Her intervalde bir sonraki slaytı göster
-    }, 5000); // Otomatik geçiş süresi milisaniye cinsinden (bu sayıyı daha önce ayarladınız)
+    }, 6000); // Otomatik geçiş süresi milisaniye cinsinden (bu sayıyı daha önce ayarladınız)
 }
 
 // Otomatik kaydırmayı durduran fonksiyon
@@ -116,7 +116,7 @@ function stopAutoSlide() {
 // Fare slider alanına girince stopAutoSlide çalışır
 //slidesWrapper.addEventListener('mouseenter', stopAutoSlide);
 // Fare slider alanından çıkınca startAutoSlide çalışır
-slidesWrapper.addEventListener('mouseleave', startAutoSlide);
+// slidesWrapper.addEventListener('mouseleave', startAutoSlide);
 
 // Sayfa yüklendiğinde otomatik kaydırmayı başlat (bu çağrı da aynı kalacak)
 startAutoSlide();

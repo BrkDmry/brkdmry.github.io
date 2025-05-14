@@ -1,12 +1,59 @@
 /* SEBA Yapı Malzemeleri - Ana Stil Dosyası (style.css) */
 
+/* CSS Değişkenleri (Renk Paleti) - DOSYANIN EN ÜSTÜNE EKLENECEK */
+:root {
+  /* Ana Renkler ve Tonları */
+  --ana-renk: #960000; /* Ana mavi renk */
+  --ana-renk-koyu: #790000; /* Koyu mavi renk */
+  --odak-rengi: #007bff; /* Input, buton odaklanma çerçeve rengi */
+
+  /* Arka Plan Renkleri */
+  --arka-plan-acik: #f8f8f8; /* Genel sayfa arka planı */
+  --arka-plan-cok-acik: #eef2f7; /* Bölüm arka planları (örn: ürün genel bakış) */
+  --arka-plan-beyaz: #fff; /* Konteyner, kart vb. arka planı */
+  --arka-plan-hover-acik: #f0f0f0; /* Açık hover arka planı (örn: kategori item) */
+
+  /* Kenarlık Renkleri */
+  --kenarlik-rengi: #ddd; /* Genel açık kenarlık */
+  --kenarlik-rengi-orta: #ccc; /* Orta kenarlık (örn: alt ürün liste border) */
+  --kenarlik-rengi-cok-acik: #eee; /* Çok açık kenarlık (örn: alt ürün liste border-bottom) */
+
+
+  /* Yazı Renkleri */
+  --yazi-rengi-koyu: #333; /* Genel koyu yazı rengi */
+  --yazi-rengi-orta: #555; /* Orta koyu yazı rengi (örn: ürün genel bakış p) */
+  --yazi-rengi-hafif-koyu: #666; /* Hafif koyu yazı rengi (örn: ürün listesi p) */
+  --yazi-rengi-acik: #fff; /* Genel açık yazı rengi */
+  --yazi-rengi-cok-acik: #eee; /* Çok açık yazı rengi (örn: slider p) */
+  --nav-hover-color: #ccc; /* Header navigasyon hover rengi */
+
+
+  /* Gölge Renkleri */
+  --golge-rengi-hafif: rgba(0, 0, 0, 0.08); /* Hafif gölge */
+  --golge-rengi: rgba(0, 0, 0, 0.1); /* Normal gölge (main box-shadow) */
+  --golge-rengi-koyu: rgba(0, 0, 0, 0.15); /* Koyu gölge (hover) */
+
+  /* Yarı Şeffaf Renkler */
+  --siyah-yari-seffaf: rgba(0, 0, 0, 0.5); /* Slider gibi yerlerdeki yarı şeffaf siyah */
+  --siyah-yari-seffaf-koyu: rgba(0, 0, 0, 0.8); /* Slider ok hover */
+
+  /* Köşe Yuvarlama Değerleri */
+  --border-radius-mini: 3px;
+  --border-radius-kucuk: 5px;
+  --border-radius-orta: 8px;
+  --border-radius-buyuk: 10px; /* Pagination için */
+
+
+  /* İhtiyaç oldukça buraya başka değişkenler de ekleyebiliriz */
+}
+
 /* Genel Stiller */
 body {
     font-family: 'Arial', sans-serif; /* Daha profesyonel bir yazı tipi */
     margin: 0; /* Varsayılan body kenar boşluklarını kaldır */
     line-height: 1.6; /* Satır yüksekliği */
-    background-color: #f8f8f8; /* Açık gri arka plan */
-    color: #333; /* Varsayılan yazı rengi */
+    background-color: var(--arka-plan-acik); /* <-- Değişken kullanıldı */
+    color: var(--yazi-rengi-koyu); /* <-- Değişken kullanıldı */
 }
 
 .container {
@@ -19,11 +66,11 @@ body {
 
 /* Başlık (Header) Stilleri */
 header {
-    background: #0056b3; /* Mavi tonu arka plan */
-    color: #fff; /* Yazı rengi */
+    background: var(--ana-renk); /* <-- Değişken kullanıldı */
+    color: var(--yazi-rengi-acik); /* <-- Değişken kullanıldı */
     padding-top: 10px;
     min-height: 70px; /* Minimum yükseklik */
-    border-bottom: #004085 3px solid; /* Alt çizgi */
+    border-bottom: var(--ana-renk-koyu) 3px solid; /* <-- Değişken kullanıldı */
 }
 
 header .container {
@@ -36,10 +83,9 @@ header .container {
 
 
 /* Logo Stili */
-/* Logo Stili */
 .logo {
-    /* float: left; *//* Flex konteyner içinde float kullanmaya gerek yok */
-    height: 70px; /* Logonun yüksekliği ARTIRILDI (Örnek değer) */
+    /* float: left; */ /* Flex konteyner içinde float kullanmaya gerek yok */
+    height: 70px; /* Logonun yüksekliği */
     /* width: auto; */ /* Genişlik otomatik olarak orantılanır */
     margin-top: 5px; /* Üstten boşluk */
     flex-shrink: 0; /* Esnek düzende küçülmesini engelle */
@@ -48,11 +94,10 @@ header .container {
 /* İsteğe bağlı: Logo linkine özel stil */
 .logo-link {
     display: block; /* Flex item içinde düzgün davranması için block yapalım */
-    /* Eğer logoda alt çizgi vs. çıkarsa buradan kaldırabilirsiniz */
-    text-decoration: none;
-    /* header .container display: flex olduğu için margin-right ekleyerek menü ile arasını açabiliriz */
+    text-decoration: none; /* Logo linkindeki alt çizgiyi kaldır */
     margin-right: 20px; /* Logo ile menü arasına boşluk */
 }
+
 /* Header H1 Stili (Artık logo kullanıldığı için genellikle gerekmez) */
 /*
 header h1 {
@@ -82,17 +127,17 @@ header nav ul li:last-child {
 
 
 header nav a {
-    color: #fff; /* Link rengi */
+    color: var(--yazi-rengi-acik); /* <-- Değişken kullanıldı */
     text-decoration: none; /* Alt çizgiyi kaldır */
     text-transform: uppercase; /* Yazıları büyük harf yap */
-    font-size: 1em; /* Yazı boyutu */
+    font-size: 1em; /* Yazı boyutu (Kullanıcının kodundaki değer) */
     padding: 5px 0; /* Tıklanabilir alanı artır */
     display: block;
     transition: color 0.3s ease; /* Renk değişimi animasyonu */
 }
 
 header nav a:hover {
-    color: #ccc; /* Mouse üzerine gelince renk değiştir */
+    color: var(--nav-hover-color); /* <-- Değişken kullanıldı */
 }
 
 /* Float temizleme kuralı (flexbox kullandığımız için genellikle gerekmez ama tutulabilir) */
@@ -108,11 +153,11 @@ header nav a:hover {
 /* Ana İçerik (Main) Stilleri */
 main {
     padding: 20px 0; /* Üst ve alt boşluk */
-    background: #fff; /* Arka plan rengi */
+    background: var(--arka-plan-beyaz); /* <-- Değişken kullanıldı (#fff) */
     margin-top: 20px; /* Header'dan boşluk */
     margin-bottom: 20px; /* Footer'a boşluk */
-    border-radius: 8px; /* Köşeleri yuvarla */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Gölge ekle */
+    border-radius: var(--border-radius-orta); /* <-- Değişken kullanıldı (8px) */
+    box-shadow: 0 2px 5px var(--golge-rengi); /* <-- Değişken kullanıldı */
 }
 
 main .container {
@@ -122,7 +167,7 @@ main .container {
 
 
 main h2 {
-    color: #0056b3; /* Başlık rengi */
+    color: var(--ana-renk); /* <-- Değişken kullanıldı */
     text-align: center;
     margin-bottom: 20px;
 }
@@ -130,16 +175,15 @@ main h2 {
 
 /* Footer Stilleri */
 footer {
-    background: #004085; /* Koyu mavi tonu arka plan */
-    color: #fff; /* Yazı rengi */
+    background: var(--ana-renk-koyu); /* <-- Değişken kullanıldı */
+    color: var(--yazi-rengi-acik); /* <-- Değişken kullanıldı */
     text-align: center;
     padding: 20px 0; /* Üst ve alt boşluk */
-    /* margin-top: 20px; *//* Main'den boşluk, main'in margin-bottom'ı yeterli */
+    /* margin-top: 20px; */ /* Main'den boşluk, main'in margin-bottom'ı yeterli */
 }
 
 footer .container {
-    /* Footer içindeki konteynerin yan boşlukları zaten .container genel kuralından geliyor */
-    /* padding: 0 20px; */
+    /* Footer içindeki konteynerin yan boşlukları */
 }
 
 footer p {
@@ -150,9 +194,7 @@ footer p {
 /* Ürünler Sayfası Özel Stilleri */
 
 /* Ürün Kategorileri Listesi Stilleri - Yan Yana ve Esnek Sıralama */
-/* Ürün Kategorileri Listesi Stilleri - Yan Yana ve Esnek Sıralama */
 .category-list {
-    /* ... (Mevcut category-list stilleri aynı kalacak: display: flex, flex-wrap, gap vb.) ... */
     list-style: none;
     padding: 0;
     margin: 20px 0;
@@ -163,231 +205,208 @@ footer p {
 }
 
 .category-item {
-    background: #fff; /* Kategori kutusunun arka plan rengi */
-    padding: 15px 20px; /* İç padding */
+    background: var(--arka-plan-beyaz); /* <-- Değişken kullanıldı (#fff) */
+    padding: 15px 20px;
     cursor: pointer;
-    position: relative; /* Alt listeyi konumlandırmak için */
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    position: relative;
+    border: 1px solid var(--kenarlik-rengi); /* <-- Değişken kullanıldı (#ddd) */
+    border-radius: var(--border-radius-kucuk); /* <-- Değişken kullanıldı (5px) */
     transition: background-color 0.3s ease;
 
-    flex: 1 1 250px; /* Esnek öğe özellikleri */
-    box-sizing: border-box; /* Padding ve border genişliğe dahil edilsin */
-    max-width: calc(50% - 10px); /* Çok geniş ekranlarda 2 itemden fazla yan yana gelmesin (isteğe bağlı) */
+    flex: 1 1 250px;
+    box-sizing: border-box;
+    max-width: calc(50% - 10px);
 
-    /* YENİ FLEXBOX AYARI: İçindeki öğeleri dikeyde sırala */
     display: flex;
-    flex-direction: column; /* İçindeki öğeleri (resim, başlık, alt liste) dikeyde sırala */
-    align-items: center; /* İçindeki öğeleri yatayda (ana eksene dik) ortala */
-    text-align: center; /* Yazıları da ortala */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-/* Kategori öğesi üzerine gelince arka plan rengi (aynı kalacak) */
 .category-item:hover {
-    background-color: #f0f0f0;
+    background-color: var(--arka-plan-hover-acik); /* <-- Değişken kullanıldı (#f0f0f0) */
 }
 
-/* Kategori başlığı (marginleri ayarlayabiliriz) */
 .category-item h3 {
-    margin-top: 10px; /* Resimden sonra boşluk */
-    margin-bottom: 10px; /* Alt liste ile arasına boşluk */
-    color: #0056b3;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--ana-renk); /* <-- Değişken kullanıldı */
     font-size: 1.2em;
     pointer-events: none;
 }
 
-/* Kategori görseli için YENİ STİL */
 .category-item img {
-    width: 85%; /* Kategori kutusunun genişliğini kapla */
-    height: 200px; /* Görselin yüksekliği (örnek boyut) */
-    object-fit: cover; /* Görselin boyuta sığarken orantıyı koruması */
-    border-radius: 5px 5px 5px 5px ; /* Sadece üst köşeleri yuvarla */
-    /* margin-bottom: 10px; *//* H3'ün margin-top'u yerine veya ek olarak kullanılabilir */
+    width: 85%; /* Kullanıcının kodundaki değer */
+    height: 200px; /* Kullanıcının kodundaki değer */
+    object-fit: cover;
+    border-radius: var(--border-radius-kucuk); /* <-- Değişken kullanıldı (5px) */
+    /* margin-bottom: 10px; */
 }
 
-
-/* Alt Ürün Listesi Stilleri (Max-Height ve içindekiler aynı kalacak) */
+/* Alt Ürün Listesi Stilleri */
 .sub-product-list {
-    /* ... (Tüm sub-product-list ve içindeki li/a stilleri aynı kalacak) ... */
-    /* position: relative olduğu için category-item içinde düzgün duracaktır */
-    /* display: block; max-height: 0; overflow: hidden; transition: max-height ... */
-    /* li, a, img stilleri (bir önceki adımda eklediğimiz) burası için GEÇERLİ DEĞİLDİR! */
-    /* Alt ürün listesi içindeki resimleri zaten eklemeyeceğiz bu senaryoda */
+    list-style: none;
+    padding: 10px 20px;
+    margin: 0;
+    background: var(--arka-plan-beyaz); /* <-- Değişken kullanıldı (#fff) */
+    border: 1px solid var(--kenarlik-rengi-orta); /* <-- Değişken kullanıldı (#ccc) */
+    border-radius: var(--border-radius-kucuk); /* <-- Değişken kullanıldı (5px) */
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    box-shadow: 0 3px 6px var(--golge-rengi); /* <-- Değişken kullanıldı */
 }
 
-/* DİKKAT: Bir önceki adımda alt ürün listesi içindeki resimler için eklediğimiz
-   .sub-product-list a img {...} stilini SİLMELİSİNİZ, çünkü artık alt ürünlere resim eklemiyoruz. */
-
-/* Fare kategori kutusunun üzerine gelince alt listeyi göster ve yüksekliğini ver */
 .category-item:hover .sub-product-list {
-    max-height: 500px; /* Yeterince büyük bir değer verin, listenin max yüksekliğinden fazla olmalı */
-                       /* Liste bu değere kadar değil, kendi içeriğinin yüksekliğine kadar büyüyecektir. */
+    max-height: 500px;
 }
 
-/* Alt listeye ait liste öğeleri */
 .sub-product-list li {
     padding: 8px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--kenarlik-rengi-cok-acik); /* <-- Değişken kullanıldı (#eee) */
 }
 
-/* Son alt liste öğesinin alt çizgisini kaldır */
 .sub-product-list li:last-child {
     border-bottom: none;
 }
 
-/* Alt liste linkleri */
 .sub-product-list a {
     text-decoration: none;
-    color: #333;
-    display: block; /* Tüm liste öğesi alanını tıklanabilir yap */
+    color: var(--yazi-rengi-koyu); /* <-- Değişken kullanıldı (#333) */
+    display: block;
     transition: color 0.2s ease;
 }
 
-/* Alt liste linkleri üzerine gelince renk değiştir */
 .sub-product-list a:hover {
-    color: #0056b3;
+    color: var(--ana-renk); /* <-- Değişken kullanıldı */
 }
 
-
-/* Hero Slider Stilleri */
+/* Slider Stilleri */
 .hero-slider {
-    width: 100%; /* Slider'ın genişliği */
-    height: 500px; /* Slider'ın yüksekliği (istediğiniz gibi ayarlayın) */
-    overflow: hidden; /* Konteynır dışına taşan slaytları gizle */
-    position: relative; /* İçindeki oklar/noktalar için position: absolute kullanacağız */
-    margin-bottom: 20px; /* Slider altı boşluk */
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
 }
 
 .slides-wrapper {
-    display: flex; /* Slaytları yan yana sırala */
-    /* Aşağıdaki width ve her .slide'ın width'i toplam slayt sayısına göre AYARLANMALI */
-    /* Örnek HTML'de 3 slayt olduğu için: */
-    width: 300%; /* Toplam slayt sayısı * 100% */
-    height: 100%; /* Yüksekliği parent'ı (hero-slider) kadar yap */
-    transition: transform 0.5s ease-in-out; /* JS bu transform'u değiştirdiğinde animasyon olsun */
+    display: flex;
+    width: 300%; /* Slayt sayısına göre güncelleyin */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
 }
 
-/* style.css - .slide kuralı */
-
 .slide {
-    width: calc(100% / 3); /* Slayt sayısına göre ayarlayın */
+    width: calc(100% / 3); /* Slayt sayısına göre güncelleyin */
     height: 100%;
-    /* background-size: cover; *//* Görselin tamamını görmek için cover yerine contain kullan */
-    background-size: contain; /* <-- BURAYI DEĞİŞTİRİN */
-    background-repeat: no-repeat; /* Görselin tekrarlamasını engelle (contain ile gerekebilir) */
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center center;
     position: relative;
-    color: #fff;
+    color: var(--yazi-rengi-acik); /* <-- Değişken kullanıldı (#fff) */
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 0px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 0px; /* Kullanıcının kodundaki değer */
     text-align: center;
     box-sizing: border-box;
 }
 
 .slide-text {
-    /* Flex item olarak .slide içinde konumlanıyor */
-    /* position: absolute kullanmaya gerek yok */
     left: 20px;
     right: 20px;
-    background: rgba(0, 0, 0, 0.5); /* Yarı şeffaf siyah arka plan */
+    background: var(--siyah-yari-seffaf); /* <-- Değişken kullanıldı */
     padding: 15px;
-    border-radius: 5px;
-    width: calc(100% - 40px); /* Kapsayıcı genişliğinden yan paddingleri düş */
-    box-sizing: border-box; /* Padding ve border genişliğe dahil */
-    flex-shrink: 0; /* Flex item olarak küçülmesini engelle */
+    border-radius: var(--border-radius-kucuk); /* <-- Değişken kullanıldı (5px) */
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .slide-text h2 {
     margin-top: 0;
     margin-bottom: 5px;
-    color: #fff; /* Başlık rengi */
+    color: var(--yazi-rengi-acik); /* <-- Değişken kullanıldı (#fff) */
 }
 
 .slide-text p {
-     color: #eee; /* Paragraf rengi */
+     color: var(--yazi-rengi-cok-acik); /* <-- Değişken kullanıldı (#eee) */
      margin-bottom: 10px;
      margin-top: 5px;
 }
 
-/* Buton Stili (Slider içindeki link butonları) */
+/* Buton Stili (Slider içindeki link butonları ve Tüm Ürünleri Gör butonu) */
 .btn {
-    display: inline-block; /* Buton gibi davranmasını sağla */
-    background: #0056b3; /* Arka plan rengi */
-    color: #fff; /* Yazı rengi */
-    padding: 10px 20px; /* İç boşluk */
-    text-decoration: none; /* Alt çizgiyi kaldır */
-    border-radius: 5px; /* Köşeleri yuvarla */
-    margin-top: 10px; /* Üstten boşluk */
-    transition: background-color 0.3s ease; /* Renk değişimi animasyonu */
+    display: inline-block;
+    background: var(--ana-renk); /* <-- Değişken kullanıldı */
+    color: var(--yazi-rengi-acik); /* <-- Değişken kullanıldı */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: var(--border-radius-kucuk); /* <-- Değişken kullanıldı (5px) */
+    font-size: 1em; /* Kullanıcının kodundaki değer */
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background: #004085; /* Fare üzerine gelince renk değiştir */
+    background: var(--ana-renk-koyu); /* <-- Değişken kullanıldı */
+    /* color: var(--yazi-rengi-acik); *//* Hover'da yazı rengi zaten beyaz */
 }
 
-/* Slider Navigasyon Okları Stilleri (HTML'e eklediğimiz butonlar) */
+/* Slider Navigasyon Okları Stilleri */
 .slider-nav {
-    position: absolute; /* Slider konteynerine (hero-slider) göre konumlandır */
-    top: 50%; /* Dikeyde ortala */
-    transform: translateY(-50%); /* Kendi yüksekliğinin yarısı kadar yukarı kaydırarak tam dikey hizala */
-    background-color: rgba(0, 0, 0, 0.5); /* Yarı şeffaf siyah arka plan */
-    color: #fff; /* Ok rengi */
-    border: none; /* Kenarlık yok */
-    padding: 10px 15px; /* İç boşluk */
-    cursor: pointer; /* Mouse imlecini el işareti yap */
-    z-index: 20; /* Slider içeriğinin üstünde görünmesini sağla */
-    font-size: 20px; /* Ok boyutu */
-    transition: background-color 0.3s ease; /* Fare üzerine gelince renk değişimi animasyonu */
-    border-radius: 3px; /* Köşeleri yuvarla */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--siyah-yari-seffaf); /* <-- Değişken kullanıldı */
+    color: var(--yazi-rengi-acik); /* <-- Değişken kullanıldı */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 20;
+    font-size: 20px; /* Kullanıcının kodundaki değer */
+    transition: background-color 0.3s ease;
+    border-radius: var(--border-radius-mini); /* <-- Değişken kullanıldı (3px) */
 }
 
 .slider-nav:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Fare üzerine gelince daha koyu arka plan */
+    background-color: var(--siyah-yari-seffaf-koyu); /* <-- Değişken kullanıldı */
 }
 
 .slider-nav.prev {
-    left: 10px; /* Soldan boşluk */
+    left: 10px;
 }
 
 .slider-nav.next {
-    right: 10px; /* Sağdan boşluk */
+    right: 10px;
 }
 
-/* İsteğe bağlı: Odaklandığında çerçeve ekle */
 .slider-nav:focus {
-    outline: 2px solid #007bff; /* Odaklandığında mavi çerçeve */
-    outline-offset: 2px; /* Çerçevenin dışarıda olması */
+    outline: 2px solid var(--odak-rengi); /* <-- Değişken kullanıldı */
+    outline-offset: 2px;
 }
 
-/* İletişim Sayfası Özel Stilleri (Mevcut halleri) */ /* <-- Line 130 */
-/*
-.contact-info, .contact-form { ... }
-.contact-form label { ... }
-.contact-form input[type="text"], ... { ... }
-.contact-form button { ... }
-.contact-form button:hover { ... }
-*/ /* <-- Line 138 */
-
+/* Slider Sayfa Numarası Göstergesi Stilleri */
 .slider-pagination {
-    position: absolute; /* Slider konteynerine (hero-slider) göre konumlandır */
-    bottom: 10px; /* Alttan 10 piksel boşluk bırak */
-    right: 400px; /* Sağdan 10 piksel boşluk bırak */
-    z-index: 20; /* Oklarla aynı seviyede veya üstte görünmesini sağla */
-    background-color: rgba(0, 0, 0, 0.5); /* Yarı şeffaf siyah arka plan */
-    color: #fff; /* Yazı rengi */
-    padding: 10px 30px; /* İç boşluk */
-    border-radius: 10px; /* Köşeleri hafif yuvarla */
-    font-size: 1em; /* Yazı boyutu */
+    position: absolute;
+    bottom: 10px;
+    right: 400px; /* Kullanıcının kodundaki değer */
+    z-index: 20;
+    background-color: var(--siyah-yari-seffaf); /* <-- Değişken kullanıldı */
+    color: var(--yazi-rengi-acik); /* <-- Değişken kullanıldı */
+    padding: 10px 30px; /* Kullanıcının kodundaki değer */
+    border-radius: var(--border-radius-buyuk); /* <-- Değişken kullanıldı (10px) */
+    font-size: 1em; /* Kullanıcının kodundaki değer */
     /* Yazıyı ortalamak için text-align: center gerekmez çünkü içeriği kısa olacak */
 }
 
 /* Anasayfa - Ürünlerimiz Bölümü Stilleri */
 .products-overview {
-    padding: 40px 0; /* Üst ve alt boşluk */
-    background-color: #eef2f7; /* Hafif farklı bir arka plan rengi */
-    text-align: center; /* Başlık ve genel metinleri ortala */
+    padding: 40px 0;
+    background-color: var(--arka-plan-cok-acik); /* <-- Değişken kullanıldı */
+    text-align: center;
 }
 
 .products-overview .container {
@@ -395,87 +414,245 @@ footer p {
 }
 
 .products-overview h2 {
-     color: #004085; /* Başlık rengi */
+     color: var(--ana-renk-koyu); /* <-- Değişken kullanıldı */
      margin-bottom: 10px;
 }
 
 .products-overview p {
-     margin-bottom: 30px; /* Başlıktan sonra boşluk */
-     color: #555;
+     color: var(--yazi-rengi-orta); /* <-- Değişken kullanıldı (#555) */
+     margin-bottom: 30px;
 }
 
 .product-list-overview {
     list-style: none;
     padding: 0;
-    margin: 0 0 40px 0; /* Listeden sonra boşluk */
+    margin: 0 0 40px 0;
 
-    display: grid; /* Öğeleri grid düzeninde yerleştir */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid: min 250px, kalan alanı paylaş */
-    gap: 20px; /* Grid öğeleri arasına boşluk */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .product-list-overview li {
-    background: #fff; /* Öğenin arka planı */
-    border: 1px solid #ddd;
-    border-radius: 8px; /* Köşeleri yuvarla */
-    padding: 20px; /* İç boşluk */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* Gölge */
-    display: flex; /* İçindeki görsel, başlık, paragrafı düzenlemek için flex */
-    flex-direction: column; /* İçindeki öğeleri dikeyde sırala */
-    align-items: center; /* İçindeki öğeleri yatayda ortala */
-    text-align: center; /* Metinleri ortala */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animasyonu için */
+    background: var(--arka-plan-beyaz); /* <-- Değişken kullanıldı (#fff) */
+    border: 1px solid var(--kenarlik-rengi); /* <-- Değişken kullanıldı (#ddd) */
+    border-radius: var(--border-radius-orta); /* <-- Değişken kullanıldı (8px) */
+    padding: 20px;
+    box-shadow: 0 2px 5px var(--golge-rengi-hafif); /* <-- Değişken kullanıldı */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-list-overview li:hover {
-    transform: translateY(-5px); /* Hafif yukarı kaydır */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Gölgeyi artır */
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px var(--golge-rengi-koyu); /* <-- Değişken kullanıldı */
 }
 
-
 .product-list-overview img {
-    width: 100%; /* Kapsayıcı genişliğinin tamamını kapla */
-    height: 180px; /* Görselin yüksekliği (örnek değer) */
-    object-fit: cover; /* Görselin alanı doldururken oranını koruması */
-    border-radius: 4px; /* Görsel köşelerini yuvarla */
-    margin-bottom: 15px; /* Görsel altı boşluk */
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--border-radius-kucuk); /* <-- Değişken kullanıldı (4px -> 5px yaptım uyumlu olsun diye) */
+    margin-bottom: 15px;
 }
 
 .product-list-overview h3 {
-    color: #0056b3; /* Başlık rengi */
+    color: var(--ana-renk); /* <-- Değişken kullanıldı */
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 1.1em;
 }
 
 .product-list-overview p {
-    color: #666;
+    color: var(--yazi-rengi-hafif-koyu); /* <-- Değişken kullanıldı (#666) */
     font-size: 0.95em;
     margin-bottom: 15px;
-    flex-grow: 1; /* Paragrafın kalan alanı doldurmasını sağla (dikeyde) */
+    flex-grow: 1;
 }
 
-/* Detay linki butonu (çerçeveli versiyon) */
 .btn-outline {
     display: inline-block;
     padding: 8px 15px;
-    border: 2px solid #0056b3; /* Çerçeve rengi */
-    color: #0056b3; /* Yazı rengi */
+    border: 2px solid var(--ana-renk); /* <-- Değişken kullanıldı */
+    color: var(--ana-renk); /* <-- Değişken kullanıldı */
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius-kucuk); /* <-- Değişken kullanıldı (5px) */
     font-size: 0.9em;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-outline:hover {
-    background-color: #0056b3; /* Hover'da arka planı doldur */
-    color: #fff; /* Hover'da yazı rengini beyaz yap */
+    background-color: var(--ana-renk); /* <-- Değişken kullanıldı */
+    color: var(--yazi-rengi-acik); /* <-- Değişken kullanıldı */
 }
-
 
 .view-all-products {
-     text-align: center; /* Butonu ortala */
+     text-align: center;
 }
 
-/* .btn stili daha önce header veya slider kısmında tanımlanmıştı, burada tekrar gerekmez */
-/* .btn { ... } */
+/* .btn stili zaten tanımlı */
+
+/* İletişim Sayfası Özel Stilleri (Mevcut halleri) */
+/*
+.contact-info, .contact-form { ... }
+.contact-form label { ... }
+.contact-form input[type="text"], ... { ... }
+.contact-form button { ... }
+.contact-form button:hover { ... }
+*/
+
+/* style.css */
+
+/* ... (Diğer tüm mevcut CSS kuralları yukarıda kalacak) ... */
+
+
+/* Ürünler Sayfası İçin Alt Ürün Listelerinin Sürekli Görünür Olması */
+/* Body'de urunler-page sınıfı varsa, sub-product-list stilini geçersiz kıl */
+.urunler-page .sub-product-list {
+    max-height: none; /* Varsayılan max-height: 0 değerini geçersiz kıl, yüksekliği sınırlama */
+    overflow: visible; /* İçeriğin gizlenmesini kaldır */
+    transition: none; /* Açılma/kapanma animasyonunu kaldır */
+    position: static; /* Eğer absolute veya relative kullanılıyorsa iptal et (şu an relative ama static daha uygun olabilir sürekli görünürken) */
+
+    /* Sürekli görünür olunca hover'daki gibi görünmemesi için stil sıfırlamaları */
+    background: none; /* Arka plan rengini kaldır */
+    border: none; /* Kenarlıkları kaldır */
+    box-shadow: none; /* Gölgeleri kaldır */
+    padding: 0; /* Varsayılan iç boşlukları kaldır */
+
+    margin-top: 10px; /* Kategori başlığı ile alt liste arasına boşluk ekle */
+}
+
+/* Ürünler sayfasında li'lere padding verelim (sub-product-list paddingini sıfırladığımız için) */
+.urunler-page .sub-product-list li {
+    padding: 8px 0; /* Alt liste öğelerinin üst/alt boşluğu */
+    border-bottom: 1px solid var(--kenarlik-rengi-cok-acik); /* Alt çizgi */
+    /* Kenarlık rengi değişkeni kullanıldı */
+}
+
+/* Ürünler sayfasında son li'nin alt çizgisini kaldır */
+.urunler-page .sub-product-list li:last-child {
+    border-bottom: none;
+}
+
+
+/* Ürünler sayfasında kategori üzerine gelince alt listenin max-height'ının artması kuralını geçersiz kıl */
+/* Böylece mouse üzerine gelince ekstra bir etki olmaz */
+.urunler-page .category-item:hover .sub-product-list {
+    max-height: none; /* Hover olunca da max-height artışı olmasın */
+}
+
+/* İsteğe bağlı: Ürünler sayfasında kategori item hover olduğunda alt liste ile ilgili başka bir etkiyi de sıfırlayabilirsiniz */
+/* Örneğin, eğer hover olunca arka planı değişiyorsa */
+/*
+.urunler-page .category-item:hover .sub-product-list li {
+    background-color: transparent !important;
+}
+*/
+
+/* ... (Diğer tüm mevcut CSS kuralları aşağıda kalacak) ... */
+
+/* style.css */
+
+/* ... (Diğer tüm mevcut CSS kuralları yukarıda kalacak) ... */
+
+
+/* İletişim Sayfası Stilleri (Güncellendi - Yan Yana Düzen) */
+
+.contact-content {
+    margin-top: 20px;
+    display: flex; /* İçindeki öğeleri (sütunları) yan yana dizmek için Flexbox kullan */
+    flex-wrap: wrap; /* Ekran daralınca öğelerin alt alta geçmelerini sağla */
+    gap: 30px; /* Sütunlar arasına boşluk (30px) */
+    /* justify-content: space-between; */ /* Öğeleri yaymak isterseniz kullanın */
+}
+
+/* İletişim bilgileri ve formu tutan sol sütun */
+.contact-left {
+    /* flex-grow: 1; flex-shrink: 1; flex-basis: 400px; */
+    /* Tercih edilen genişlik 400px, ama büyüyebilir ve küçülebilir */
+    flex: 1 1 400px; /* Daha modern yazım */
+    /* min-width: 300px; */ /* Çok daralmasını istemiyorsanız */
+}
+
+.contact-info, .contact-form {
+    background: var(--arka-plan-beyaz);
+    border: 1px solid var(--kenarlik-rengi);
+    border-radius: var(--border-radius-orta);
+    padding: 30px;
+    /* margin-bottom: 30px; *//* Altına boşluk */
+    box-shadow: 0 2px 5px var(--golge-rengi);
+    /* flex-grow: 1; flex-shrink: 1; flex-basis: auto; */ /* contact-left içinde dikeyde esnemeleri için */
+}
+
+.contact-info {
+     /* ... existing styles ... */
+     margin-bottom: 20px; /* contact-form ile arasına boşluk */
+}
+
+ .contact-form {
+     /* ... existing styles ... */
+     margin-bottom: 0; /* contact-left'in son öğesi olduğu için altına margin verme */
+ }
+
+
+.contact-info h3, .contact-form h3, .contact-map h3 {
+    color: var(--ana-renk-koyu);
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: var(--yazi-rengi-koyu);
+}
+
+.contact-info p:last-child {
+    margin-bottom: 0;
+}
+
+/* Form Stilleri (Aynı kalacak) */
+/* .form-group, label, input, textarea, button stilleri buranın altında devam edecek */
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--yazi-rengi-koyu); }
+.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"], .form-group input[type="subject"], textarea {
+    width: 100%; padding: 12px; border: 1px solid var(--kenarlik-rengi-orta); border-radius: var(--border-radius-kucuk); box-sizing: border-box; font-size: 1em; font-family: 'Arial', sans-serif; color: var(--yazi-rengi-koyu);
+}
+.form-group input:focus, textarea:focus {
+    outline: none; border-color: var(--ana-renk); box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+}
+textarea { resize: vertical; }
+/* .btn stili zaten tanımlı */
+
+
+/* Harita Alanı - Sağ Sütun */
+.contact-map {
+    /* flex-grow: 1; flex-shrink: 1; flex-basis: 300px; */
+     /* Tercih edilen genişlik 300px, ama büyüyebilir ve küçülebilir */
+    flex: 1 1 300px; /* Daha modern yazım */
+    /* min-width: 250px; */ /* Çok daralmasını istemiyorsanız */
+
+    margin-top: 0; /* Flex item olduğu için üst margin gerekmez */
+
+    background: var(--arka-plan-beyaz); /* Arka plan rengi */
+    border: 1px solid var(--kenarlik-rengi); /* Kenarlık */
+    border-radius: var(--border-radius-orta); /* Köşeler */
+    padding: 20px; /* İç boşluk */
+    box-shadow: 0 2px 5px var(--golge-rengi); /* Gölge */
+}
+
+
+.contact-map iframe {
+    width: 100%;
+    height: 300px; /* Yükseklik (istediğiniz gibi ayarlayın) */
+    border: 0;
+    border-radius: var(--border-radius-kucuk); /* Köşeleri yuvarla (5px) */
+}
+
+
+/* ... (Diğer tüm mevcut CSS kuralları aşağıda kalacak) ... */
