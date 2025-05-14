@@ -3,15 +3,15 @@
 /* CSS Değişkenleri (Renk Paleti) - DOSYANIN EN ÜSTÜNE EKLENECEK */
 :root {
   /* Ana Renkler ve Tonları */
-  --ana-renk: #960000; /* Ana mavi renk */
-  --ana-renk-koyu: #790000; /* Koyu mavi renk */
+  --ana-renk: #ff7700; /* Ana Kırmızı renk */
+  --ana-renk-koyu: #c95e00; /* Koyu Kırmızı renk */
   --odak-rengi: #007bff; /* Input, buton odaklanma çerçeve rengi */
 
   /* Arka Plan Renkleri */
-  --arka-plan-acik: #f8f8f8; /* Genel sayfa arka planı */
-  --arka-plan-cok-acik: #eef2f7; /* Bölüm arka planları (örn: ürün genel bakış) */
-  --arka-plan-beyaz: #fff; /* Konteyner, kart vb. arka planı */
-  --arka-plan-hover-acik: #f0f0f0; /* Açık hover arka planı (örn: kategori item) */
+  --arka-plan-acik: #282828; /* Genel sayfa arka planı */
+  --arka-plan-cok-acik: #1e1e1e; /* Bölüm arka planları (örn: ürün genel bakış) */
+  --arka-plan-beyaz: #1c1c1c; /* Konteyner, kart vb. arka planı */
+  --arka-plan-hover-acik: #060606; /* Açık hover arka planı (örn: kategori item) */
 
   /* Kenarlık Renkleri */
   --kenarlik-rengi: #ddd; /* Genel açık kenarlık */
@@ -20,12 +20,12 @@
 
 
   /* Yazı Renkleri */
-  --yazi-rengi-koyu: #333; /* Genel koyu yazı rengi */
-  --yazi-rengi-orta: #555; /* Orta koyu yazı rengi (örn: ürün genel bakış p) */
-  --yazi-rengi-hafif-koyu: #666; /* Hafif koyu yazı rengi (örn: ürün listesi p) */
+  --yazi-rengi-koyu: #ffffff; /* Genel koyu yazı rengi */
+  --yazi-rengi-orta: #ffffff; /* Orta koyu yazı rengi (örn: ürün genel bakış p) */
+  --yazi-rengi-hafif-koyu: #ffffff; /* Hafif koyu yazı rengi (örn: ürün listesi p) */
   --yazi-rengi-acik: #fff; /* Genel açık yazı rengi */
   --yazi-rengi-cok-acik: #eee; /* Çok açık yazı rengi (örn: slider p) */
-  --nav-hover-color: #ccc; /* Header navigasyon hover rengi */
+  --nav-hover-color: #000000; /* Header navigasyon hover rengi */
 
 
   /* Gölge Renkleri */
