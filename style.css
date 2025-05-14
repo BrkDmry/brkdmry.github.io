@@ -198,10 +198,10 @@ footer p {
 
 /* Kategori görseli için YENİ STİL */
 .category-item img {
-    width: 100%; /* Kategori kutusunun genişliğini kapla */
-    height: 150px; /* Görselin yüksekliği (örnek boyut) */
+    width: 85%; /* Kategori kutusunun genişliğini kapla */
+    height: 200px; /* Görselin yüksekliği (örnek boyut) */
     object-fit: cover; /* Görselin boyuta sığarken orantıyı koruması */
-    border-radius: 5px 5px 0 0; /* Sadece üst köşeleri yuvarla */
+    border-radius: 5px 5px 5px 5px ; /* Sadece üst köşeleri yuvarla */
     /* margin-bottom: 10px; *//* H3'ün margin-top'u yerine veya ek olarak kullanılabilir */
 }
 
@@ -369,3 +369,113 @@ footer p {
 .contact-form button { ... }
 .contact-form button:hover { ... }
 */ /* <-- Line 138 */
+
+.slider-pagination {
+    position: absolute; /* Slider konteynerine (hero-slider) göre konumlandır */
+    bottom: 10px; /* Alttan 10 piksel boşluk bırak */
+    right: 400px; /* Sağdan 10 piksel boşluk bırak */
+    z-index: 20; /* Oklarla aynı seviyede veya üstte görünmesini sağla */
+    background-color: rgba(0, 0, 0, 0.5); /* Yarı şeffaf siyah arka plan */
+    color: #fff; /* Yazı rengi */
+    padding: 10px 30px; /* İç boşluk */
+    border-radius: 10px; /* Köşeleri hafif yuvarla */
+    font-size: 1em; /* Yazı boyutu */
+    /* Yazıyı ortalamak için text-align: center gerekmez çünkü içeriği kısa olacak */
+}
+
+/* Anasayfa - Ürünlerimiz Bölümü Stilleri */
+.products-overview {
+    padding: 40px 0; /* Üst ve alt boşluk */
+    background-color: #eef2f7; /* Hafif farklı bir arka plan rengi */
+    text-align: center; /* Başlık ve genel metinleri ortala */
+}
+
+.products-overview .container {
+    /* .container genel stilleri geçerli */
+}
+
+.products-overview h2 {
+     color: #004085; /* Başlık rengi */
+     margin-bottom: 10px;
+}
+
+.products-overview p {
+     margin-bottom: 30px; /* Başlıktan sonra boşluk */
+     color: #555;
+}
+
+.product-list-overview {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0; /* Listeden sonra boşluk */
+
+    display: grid; /* Öğeleri grid düzeninde yerleştir */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid: min 250px, kalan alanı paylaş */
+    gap: 20px; /* Grid öğeleri arasına boşluk */
+}
+
+.product-list-overview li {
+    background: #fff; /* Öğenin arka planı */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Köşeleri yuvarla */
+    padding: 20px; /* İç boşluk */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* Gölge */
+    display: flex; /* İçindeki görsel, başlık, paragrafı düzenlemek için flex */
+    flex-direction: column; /* İçindeki öğeleri dikeyde sırala */
+    align-items: center; /* İçindeki öğeleri yatayda ortala */
+    text-align: center; /* Metinleri ortala */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animasyonu için */
+}
+
+.product-list-overview li:hover {
+    transform: translateY(-5px); /* Hafif yukarı kaydır */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Gölgeyi artır */
+}
+
+
+.product-list-overview img {
+    width: 100%; /* Kapsayıcı genişliğinin tamamını kapla */
+    height: 180px; /* Görselin yüksekliği (örnek değer) */
+    object-fit: cover; /* Görselin alanı doldururken oranını koruması */
+    border-radius: 4px; /* Görsel köşelerini yuvarla */
+    margin-bottom: 15px; /* Görsel altı boşluk */
+}
+
+.product-list-overview h3 {
+    color: #0056b3; /* Başlık rengi */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.product-list-overview p {
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Paragrafın kalan alanı doldurmasını sağla (dikeyde) */
+}
+
+/* Detay linki butonu (çerçeveli versiyon) */
+.btn-outline {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 2px solid #0056b3; /* Çerçeve rengi */
+    color: #0056b3; /* Yazı rengi */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: #0056b3; /* Hover'da arka planı doldur */
+    color: #fff; /* Hover'da yazı rengini beyaz yap */
+}
+
+
+.view-all-products {
+     text-align: center; /* Butonu ortala */
+}
+
+/* .btn stili daha önce header veya slider kısmında tanımlanmıştı, burada tekrar gerekmez */
+/* .btn { ... } */
