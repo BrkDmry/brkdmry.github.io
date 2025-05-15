@@ -85,9 +85,9 @@ header .container {
 /* Logo Stili */
 .logo {
     /* float: left; */ /* Flex konteyner içinde float kullanmaya gerek yok */
-    height: 70px; /* Logonun yüksekliği */
-    /* width: auto; */ /* Genişlik otomatik olarak orantılanır */
-    margin-top: 5px; /* Üstten boşluk */
+    height: 80px; /* Logonun yüksekliği */
+    width: auto; /* Genişlik otomatik olarak orantılanır */
+    margin-top: 0px; /* Üstten boşluk */
     flex-shrink: 0; /* Esnek düzende küçülmesini engelle */
 }
 
