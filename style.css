@@ -593,6 +593,10 @@ footer p {
      margin-bottom: 20px; /* contact-form ile arasına boşluk */
 }
 
+.contact-info .btn {
+    margin-top: 15px; /* WhatsApp butonu üstten boşluk */
+}
+
  .contact-form {
      /* ... existing styles ... */
      margin-bottom: 0; /* contact-left'in son öğesi olduğu için altına margin verme */
@@ -656,3 +660,47 @@ textarea { resize: vertical; }
 
 
 /* ... (Diğer tüm mevcut CSS kuralları aşağıda kalacak) ... */
+
+/* style.css */
+
+/* ... (Mevcut İletişim sayfası stilleri) ... */
+
+/* style.css */
+
+/* ... diğer ilgili stiller ... */
+
+/* WhatsApp Butonu Stilleri (Renkler Eklendi/Güncellendi) */
+.whatsapp-button {
+    /* Mevcut display, align-items, justify-content, text-decoration, padding, margin-top stilleri aynı kalacak */
+     display: inline-flex; 
+     align-items: center; 
+     justify-content: center; 
+     text-decoration: none; 
+     padding: 10px 15px; 
+     margin-top: 15px; 
+
+    background-color: #25D366; /* WhatsApp Yeşili */
+    color: var(--yazi-rengi-acik); /* Yazı rengini açık (beyaz) yapalım */
+    border: none; /* Eğer .btn'den kenarlık geliyorsa kaldırabiliriz */
+    /* transition: background-color 0.3s ease; *//* .btn'den geliyorsa tekrar yazmaya gerek yok */
+}
+
+.whatsapp-button:hover {
+    background-color: #1DA851; /* Fare üzerine gelince biraz daha koyu yeşil */
+    /* color: var(--yazi-rengi-acik); *//* Hover'da da yazı rengi beyaz kalsın */
+}
+
+.whatsapp-icon {
+    /* Mevcut width, height, margin-right stilleri aynı kalacak */
+     width: 24px; */
+     height: 24px; */
+     margin-right: 8px; */
+}
+
+/* ... diğer kurallar ... */
+
+.whatsapp-button img {
+    width: 30px; /* Logo boyutunu ayarlayın */
+    height: 30px; /* Logo boyutunu ayarlayın */
+    margin-right: 8px; /* Logo ile yazı arasına boşluk */
+}
